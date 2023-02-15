@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  # Enable workflow only when manually called
+  workflow_dispatch
+  # OR
+  # Enable workflow on pushes to main and dev
+  # push:
+    # branches: [ main, dev ]
+
+env:
+  PROJECT_NAME: "kicad-2-layer-template"
+  CLI_TOOL: "kicad-cli-nightly"
+
+jobs:
+  Generate_KiCAD_outputs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check out submodules
+      run: git submodule update --init --recursive
+
+    - name: Get Git Branch
+      run: |
+        echo "GIT_BRANCH=$(echo $GITHUB_REF_NAME | cut -d'/' -f 3)" >> $GITHUB_ENV
+
+    # To be updated once kicad-cli makes it to stable release in v7
+    - name: Install KiCAD
+      run: |
+        sudo add-apt-repository --yes ppa:kicad/kicad-dev-nightly
+        sudo apt update
+        sudo apt install kicad-nightly
+
+    - name: Generate Netlist
+      run: |
+        ${{env.CLI_TOOL}} sch export netlist --format kicadxml ./breadboard-io/breadboard-io.kicad_sch
+
+    - name: Retrieve project revision
+      run: |
+        python ./util/getRevision.py ./${{env.PROJECT_NAME}}.xml ./revision.txt
+        echo "REVISION=$(cat revision.txt)" >> $GITHUB_ENV
+
+    - name: Create output directories
+      run: |
+        mkdir -p output
+        mkdir -p ${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers
+
+    - name: Generate Schematic
+      run: |
+        ${{env.CLI_TOOL}} sch export pdf ${{env.PROJECT_NAME}}/${{env.PROJECT_NAME}}.kicad_sch -o output/${{env.PROJECT_NAME}}_${{env.REVISION}}_schematic.pdf
+
+    - name: Generate BOM
+      run: |
+        python ./util/bom_csv_grouped_by_mfp.py ./${{env.PROJECT_NAME}}.xml ./output/${{env.PROJECT_NAME}}_${{env.REVISION}}_BOM.csv
+
+    - name: Generate STEP
+      run: |
+        ${{env.CLI_TOOL}} pcb export step --subst-models ${{env.PROJECT_NAME}}/${{env.PROJECT_NAME}}.kicad_pcb -o output/${{env.PROJECT_NAME}}_${{env.REVISION}}_3D.step
+
+    - name: Generate Gerbers & Drill
+      run: |
+        cd ${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers
+        ${{env.CLI_TOOL}} pcb export gerbers --board-plot-params ../${{env.PROJECT_NAME}}/${{env.PROJECT_NAME}}.kicad_pcb
+        ${{env.CLI_TOOL}} pcb export drill --excellon-zeros-format suppressleading --excellon-min-header ../${{env.PROJECT_NAME}}/${{env.PROJECT_NAME}}.kicad_pcb
+
+    - name: Zip up gerbers
+      run: zip -r ${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers.zip ./${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers
+
+    - name: Upload local artifacts to CI job
+      if: env.GIT_BRANCH == 'dev'
+      uses: actions/upload-artifact@v3
+      with:
+        name: KiCAD Artifacts
+        retention-days: 1
+        path: |
+          output/*.pdf
+          output/*.csv
+          output/*.step
+          ${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers.zip
+
+    - name: Create Github release
+      if: env.GIT_BRANCH == 'main'
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: |
+          output/*.pdf
+          output/*.csv
+          output/*.step
+          ${{env.PROJECT_NAME}}_${{env.REVISION}}_gerbers.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{env.REVISION}}
