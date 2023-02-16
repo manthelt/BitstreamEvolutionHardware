@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ADS7828E_250")(type "KiCad")(uri "/home/logan/GitkrakenRepos/BitstreamEvolutionHardware/symbols/ADS7828E_250.kicad_sym")(options "")(descr ""))
+)

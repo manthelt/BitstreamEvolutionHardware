@@ -1,0 +1,117 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "AD9833BRMZ" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "U" (id 0) (at -17.78 18.78 0.0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "AD9833BRMZ" (id 1) (at -17.78 -21.78 0.0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "SOP50P490X110-10N" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "DIGI-KEY_PURCHASE_URL" "https://www.digikey.ph/product-detail/en/analog-devices-inc/AD9833BRMZ/AD9833BRMZ-ND/751220?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "STANDARD" "IPC7351B" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PARTREV" "F" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "DESCRIPTION" "Direct Digital Synthesizer 25MHz 1-DAC 10-Bit Serial 10-Pin MSOP Tube" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "DIGI-KEY_PART_NUMBER" "AD9833BRMZ-ND" (id 8) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "Analog Devices" (id 9) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "AD9833BRMZ_0_0"
+      (rectangle (start -17.78 -17.78) (end 17.78 17.78)
+        (stroke (width 0.41)) (fill (type background))
+      )
+      (pin input line (at -22.86 10.16 0) (length 5.08)
+        (name "CAP/2.5V"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 7.62 0) (length 5.08)
+        (name "COMP"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 5.08 0) (length 5.08)
+        (name "FSYNC"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "8"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input clock (at -22.86 0.0 0) (length 5.08)
+        (name "MCLK"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "5"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input clock (at -22.86 -2.54 0) (length 5.08)
+        (name "SCLK"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "7"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -7.62 0) (length 5.08)
+        (name "SDATA"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "6"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 22.86 15.24 180.0) (length 5.08)
+        (name "VDD"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin output line (at 22.86 10.16 180.0) (length 5.08)
+        (name "VOUT"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "10"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 22.86 -12.7 180.0) (length 5.08)
+        (name "AGND"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "9"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 22.86 -15.24 180.0) (length 5.08)
+        (name "DGND"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "4"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)

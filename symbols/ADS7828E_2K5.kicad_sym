@@ -1,0 +1,147 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "ADS7828E{slash}2K5" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "IC" (id 0) (at -17.78 26.4 0.0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "ADS7828E{slash}2K5" (id 1) (at -17.78 -29.4 0.0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "SOP65P640X120-16N" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "ADS7828E{slash}2K5_0_0"
+      (rectangle (start -17.78 -25.4) (end 17.78 25.4)
+        (stroke (width 0.41)) (fill (type background))
+      )
+      (pin input line (at -22.86 17.78 0) (length 5.08)
+        (name "A0"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "12"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 15.24 0) (length 5.08)
+        (name "A1"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "13"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 12.7 0) (length 5.08)
+        (name "CH0"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 10.16 0) (length 5.08)
+        (name "CH1"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 7.62 0) (length 5.08)
+        (name "CH2"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 5.08 0) (length 5.08)
+        (name "CH3"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "4"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 2.54 0) (length 5.08)
+        (name "CH4"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "5"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 3.55271e-15 0) (length 5.08)
+        (name "CH5"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "6"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -2.54 0) (length 5.08)
+        (name "CH6"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "7"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -5.08 0) (length 5.08)
+        (name "CH7"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "8"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -7.62 0) (length 5.08)
+        (name "COM"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "11"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -10.16 0) (length 5.08)
+        (name "REFIN/REFOUT"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "10"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin input line (at -22.86 -12.7 0) (length 5.08)
+        (name "SCL"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "14"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin bidirectional line (at -22.86 -17.78 0) (length 5.08)
+        (name "SDA"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "15"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 22.86 22.86 180.0) (length 5.08)
+        (name "VDD"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "16"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin power_in line (at 22.86 -22.86 180.0) (length 5.08)
+        (name "GND"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "9"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)
