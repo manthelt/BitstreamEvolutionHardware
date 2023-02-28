@@ -1,22 +1,17 @@
 Bitstream Evolution Dev Board
 ===
 ###### Created by Logan Manthey ( [@manthelt](https://github.com/manthelt) )
-
-
+---
 
 ## Introduction
----
+
 ![3d Render of Current Revision](img/CurrentBoard.png)
 
 
 
 This dev board is an extension of the evolvable bitstream. It was created to expand and bring new features to the evolvable hardware ecosystem while still maintaining it’s accessibility. To make the board accessible KiCAD was chosen for the CAD software given it’s open source and free nature. To find Gerber files for printing take a look at the release section. 
 
-
-
-
 ## Features
----
 
 * **Multi Channel ADC** 
 Supporting two 8 channel **NAME OF ADC** ADCs this dev board can record up to 16 channels at up to **XX** samples per second
@@ -27,7 +22,6 @@ To provide support for future expandability multiple DACs were included. The pri
 * **Waveform Generation**
 This Dev Kit also includes a programmable waveform generator. The primary uses of this are for both sanity checking instrumentation and for evolving more complex circuits which ultilize a waveform as an input source. To allow for this expandability the waveform outputs were left as male jumper pins for easy connection to any section of the board
 
----
 
 ## Getting Started
 
@@ -48,7 +42,7 @@ The waveform generation section also has male pin outs which allow for flexibili
 
 **INSERT PICTURE** 
 
----
+
 
 
 
