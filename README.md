@@ -5,7 +5,7 @@ Bitstream Evolution Dev Board
 
 ## Introduction
 
-![3d Render of Current Revision](img/CurrentBoard.png)
+![3d Render of Current Revision](img/Raytraced_View.png)
 
 
 
@@ -18,6 +18,11 @@ Supporting two 8 channel **NAME OF ADC** ADCs this dev board can record up to 16
 
  * **Multiple DACs**
 To provide support for future expandability multiple DACs were included. The primary use case of these DACs is for setting the reference voltage for the the interrupt input on the ardunio but can be used for other various purposes such as adjusting a voltage offset for the waveform or for setting the reference voltage for the ADCs 
+
+
+![3d Render of Current Revision](img/DAC.png)
+
+
 
 * **Waveform Generation**
 This Dev Kit also includes a programmable waveform generator. The primary uses of this are for both sanity checking instrumentation and for evolving more complex circuits which ultilize a waveform as an input source. To allow for this expandability the waveform outputs were left as male jumper pins for easy connection to any section of the board
@@ -35,6 +40,10 @@ To provide the most amount of modulatary each one of the channels on the ADC and
 
 **INSERT PICTURE**
 
+![3d Render of Current Revision](img/Connectors.png)
+
+
+
 As one can see both of the connections can be made at the same time. If this is the case and the ardunio is outputting digital outputs then those outputs will be seen on the ADC. 
 
 #### Waveform Generation
@@ -42,7 +51,7 @@ The waveform generation section also has male pin outs which allow for flexibili
 
 **INSERT PICTURE** 
 
-
+![3d Render of Current Revision](img/Generator_Output.png)
 
 
 
@@ -52,6 +61,8 @@ The waveform generation section also has male pin outs which allow for flexibili
 ### ADC Section
 Given the current platform uses digital serial as the main form of communication there is a temporary data store on the ardunio itself from the ADCs after initiating a data capture. After said capture is complete the data can then be relayed back to the evolution algorithm using the serial lines. Given only one of the channels can be recorded at any given time a decrease in samples per second will occur when capturing more than 1 channel at a given time. This decrease can be seen outlined below in the table. For future expandability a more parallel approach will be needed to increase the samples per second for each one of the channels.  
 
+
+![3d Render of Current Revision](img/ADC.png)
 
 **A Channels**
 
