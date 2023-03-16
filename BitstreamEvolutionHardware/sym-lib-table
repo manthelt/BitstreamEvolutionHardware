@@ -8,4 +8,5 @@
   (lib (name "MAXDAC")(type "Legacy")(uri "/home/logan/GitkrakenRepos/BitstreamEvolutionHardware/symbols/MAXDAC.lib")(options "")(descr ""))
   (lib (name "AD9833BRMZ")(type "KiCad")(uri "/home/logan/GitkrakenRepos/BitstreamEvolutionHardware/symbols/AD9833BRMZ.kicad_sym")(options "")(descr ""))
   (lib (name "XRCGB25M000F3M04R0")(type "KiCad")(uri "/home/logan/GitkrakenRepos/BitstreamEvolutionHardware/symbols/XRCGB25M000F3M04R0.kicad_sym")(options "")(descr ""))
+  (lib (name "usbicon")(type "KiCad")(uri "/home/logan/GitkrakenRepos/BitstreamEvolutionHardware/symbols/usbicon.kicad_sym")(options "")(descr ""))
 )
