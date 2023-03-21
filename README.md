@@ -102,6 +102,8 @@ Given the current platform uses digital serial as the main form of communication
 |-----------------------------------------------------------|--------|---------------------|--------------------------------------------------|
 |A1                                                         |1       |Arduino Nano Every   |                                                  |
 
+**Note Data sheets can be found in the datasheets folder**
+
 ### https://github.com/manthelt
 
 Copyright &copy; 2023 [manthelt](https://github.com/manthelt)
