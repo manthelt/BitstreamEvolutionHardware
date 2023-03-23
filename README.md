@@ -7,55 +7,62 @@ Bitstream Evolution Dev Board
 
 ![3d Render of Current Revision](img/Raytraced_View.png)
 
-
-
-This dev board is an extension of the evolvable hardware opensource project (https://evolvablehardware.org/). It was created to expand and bring new features to the evolvable hardware ecosystem while still maintaining it’s accessibility. To make the board accessible KiCAD was chosen for the CAD software given it’s open source and free nature. To find Gerber files for printing take a look at the release section. 
+This development board is an extension of the evolvable hardware opensource project (https://evolvablehardware.org/). It was created to expand and bring new features to the evolvable hardware ecosystem while still maintaining it’s accessibility. To make the board accessible KiCAD was chosen for the CAD software given it’s open source and free nature. To find Gerber files for printing take a look at the release section. 
 
 ## Features
 
-* **Multi Channel ADC** 
-Supporting two 8 channel **NAME OF ADC** ADCs this dev board can record up to 16 channels at up to **XX** samples per second
+* **Multi-Channel ADC** 
+Supporting two 8 channel **NAME OF ADC** ADCs this dev board can record up to 16 channels at up to **XX** samples per second. External ADCs were choose as to free up ports on the nano which would allow for more interrupt input channels to use with experiments such as variance maximization. 
 
- * **Multiple DACs**
-To provide support for future expandability multiple DACs were included. The primary use case of these DACs is for setting the reference voltage for the the interrupt input on the ardunio but can be used for other various purposes such as adjusting a voltage offset for the waveform or for setting the reference voltage for the ADCs 
+ * **Multi-Channel DAC**
+To provide support for future expandability multi channel DACs were included. The primary use case of these DACs is for setting the reference voltage for the the interrupt input on the nano but can be used for other various purposes such as adjusting a voltage offset for the waveform or for setting the reference voltage for the ADCs 
 
-
-![3d Render of Current Revision](img/DAC.png)
-
-
-
-* **Waveform Generation**
-This Dev Kit also includes a programmable waveform generator. The primary uses of this are for both sanity checking instrumentation and for evolving more complex circuits which ultilize a waveform as an input source. To allow for this expandability the waveform outputs were left as male jumper pins for easy connection to any section of the board
+* **Clock Generation**
+This Dev Kit also includes a programmable clock generator. The primary uses of this are for both sanity checking instrumentation and for evolving more complex circuits which utilize a waveform as an input source. To allow for this expandability the waveform outputs were left as male jumper pins for easy connection to any section of the board. This will be especially useful when recreating a tone discriminator. There are also multiple channels which are able to be set through software. This allows for more complex experiments to take place which could involve multiple clocks.
 
 
-## Getting Started
+## Getting Started and Usage
+The following link will take you to the firmware for this project that is to be installed on the nano
 
-### Software
-The following link will take you to the GitHub reporting containing the firmware for the project and provide documentation on how to use it with conjunction with this hardware
 
-### Hardware
-
-#### Connecting Channels
-To provide the most amount of modulatary each one of the channels on the ADC and each one of connections on the ardunio has a 2 port male connection. By shorting these one can connect channels in varying configurations. The following is an overview of how this connection scheme is archived. 
-
-**INSERT PICTURE**
+### Connecting Channels
+To provide the most amount of modulatary each one of the channels on the ADC and each one of connections on the Arduino has a 2 port male connection. By shorting these one can connect channels in varying configurations. The following is an overview of how this connection scheme is archived. 
 
 ![3d Render of Current Revision](img/Connectors.png)
 
+As one can see both of the connections can be made at the same time. If this is the case and the Arduino is outputting digital outputs then those outputs will be seen on the ADC. 
 
 
-As one can see both of the connections can be made at the same time. If this is the case and the ardunio is outputting digital outputs then those outputs will be seen on the ADC. 
+![3d Render of Current Revision](img/jumper.png)
 
-#### Waveform Generation
-The waveform generation section also has male pin outs which allow for flexibility with the configuration. For example you can send in a output from the waveform into a certain input to the FPGA or even send it into the ardunio as an input to sanity check the input values. These va
+_Example of Jumper that can be used to short connections (SNT-100-BK-T)_
 
-**INSERT PICTURE** 
+### Clock Generation
+After being set through software the clock generation allows for up to three channels to output a clock. One can simply use a jumper cable to connect to the required section of the board for the experiment at hand.
 
 ![3d Render of Current Revision](img/Generator_Output.png)
 
 
+### DAC Usage
+The DACS are also able to be set through software. There are multiple channels to be set as well. 
+
+![3d Render of Current Revision](img/DAC.png)
+
+
+_Note: The RDY and LDAC outputs are for debugging purposes and made accessible but not highlighted to avoid confusion. To see what these do reference the DAC data sheet found in the data sheets folder_
+
+
+
+
+
 
 ## Design Methodology 
+
+
+### Clock Generation
+The Clock generation section also has male pin outs which allow for flexibility with the configuration. For example you can send in a output from the waveform into a certain input to the FPGA or even send it into the Arduino as an input to sanity check the input values. 
+
+![3d Render of Current Revision](img/Generator_Output.png)
 
 
 ### ADC Section
