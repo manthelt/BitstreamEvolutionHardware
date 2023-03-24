@@ -7,7 +7,7 @@ Bitstream Evolution Dev Board
 
 ![3d Render of Current Revision](img/Raytraced_View.png)
 
-This development board is an extension of the evolvable hardware opensource project (https://evolvablehardware.org/). It was created to expand and bring new features to the evolvable hardware ecosystem while still maintaining it’s accessibility. To make the board accessible KiCAD was chosen for the CAD software given it’s open source and free nature. To find Gerber files for printing take a look at the release section. 
+This development board is an extension of the evolvable hardware open source project (https://evolvablehardware.org/). It was created to expand and bring new features to the evolvable hardware ecosystem while still maintaining it’s accessibility. To make the board accessible KiCAD was chosen for the CAD software given it’s open source and free nature. To find Gerber files for printing take a look at the release section. 
 
 ## Features
 
@@ -57,7 +57,10 @@ _Note: The RDY and LDAC outputs are for debugging purposes and made accessible b
 
 
 ## Design Methodology 
+Overall this design is meant to have as many features as possible while still being accessible. 
 
+### Carrier Board Design
+The reasoning behind making this a carrier board instead of fully embedded board was to allow for easy of soldering and to allow the FPGAs to be swapped out to see if there is any physical differences across boards that would affect evolution.
 
 ### Clock Generation
 The Clock generation section also has male pin outs which allow for flexibility with the configuration. For example you can send in a output from the waveform into a certain input to the FPGA or even send it into the Arduino as an input to sanity check the input values. 
@@ -110,6 +113,18 @@ Given the current platform uses digital serial as the main form of communication
 |A1                                                         |1       |Arduino Nano Every   |                                                  |
 
 **Note Data sheets can be found in the datasheets folder**
+
+
+## Building the Board
+
+
+## Breakout Boards
+To allow for ease of programming many of the parts used in this can be found in prebuilt adafruit breakout boards for testing. These are listed below
+
+* DAC
+* ADC
+* Clock Generator
+* 
 
 ### https://github.com/manthelt
 
